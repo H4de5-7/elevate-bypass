@@ -14,7 +14,7 @@ windows平台下通用（不包含内核漏洞、特定条件的提权）的提�
 
 administrator提权至system的前三种提权方式由于都要与令牌/新起高权限进程相关，会被360严格监控（应该是因为360对CreateProcessWithTokenW等api进行了严格的监控）。而系统服务和计划任务并没有起子进程因此不会被监控。
 
-关于烂土豆提权、令牌相关提权绕过360的手段可参考 https://paper.seebug.org/1953/ 。这里用高权限的Token跑一个特权线程，再用这个特权线程来执行shellcode，不过并不是十分方便。
+关于烂土豆提权、令牌相关提权绕过360的手段可参考 https://paper.seebug.org/1953/ 。该文章用高权限的Token跑一个特权线程，再用这个特权线程来执行shellcode，不过并不是十分方便。
 
 系统服务是通过注册服务（服务是system权限），而计划任务通过写入system权限的计划任务( https://github.com/H4de5-7/schtask-bypass )。
 
